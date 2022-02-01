@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+    volums: 
+        sito:
+            external: true
+    sito:
+        container_name: sito
+        hostname: sito
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        volumes:
+            - ./sito:/var/www/html/
+        ports:
+            - "8080:80"
